@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 14:45:49 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/01/18 15:31:05 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:42:08 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,3 @@ int	main(int argc, char *argv[])
 	printf("%s\n", a);
 	return (0);
 }
-s
