@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 14:45:49 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/01/27 17:16:13 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/01/28 12:34:36 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,22 @@
 #include <fcntl.h>
 #include "pipex.h"
 
-char	*path_to_bins(char **envp)
+char	*path_to_bins(char **env)
 {
-	while (ft_strncmp("PATH", *envp, 4))
+	char	*path;
+	int		i;
+
+	i = 0;
+	while (env[i] != NULL)
 	{
-		envp++;
+		path = env[i];
+		printf("%s\n", path);
+		if (ft_strncmp("PATH", path, 4) == 0)
+			break ;
+		i++;
 	}
-	return (*envp + 5);
+	if (access(path, F_OK) < 0)
+		return (NULL);
 }
 
 int	main(int argc, char *argv[])
