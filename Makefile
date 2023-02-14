@@ -9,8 +9,8 @@ HEADER_SRCS	=	pipex.h pipex_bonus.h
 HEADER_DIR	=	includes/
 HEADER		=	$(addprefix $(HEADER_DIR), $(HEADER_SRCS))
 
-MPATH_SRCS	=	pipex.c childs.c error.c free.c
-MPATH_DIR	=	mandatory/
+MPATH_SRCS	=	pipex.c process.c
+MPATH_DIR	=	main/
 MPATH		=	$(addprefix $(MPATH_DIR), $(MPATH_SRCS))
 OBJ_M		=	$(MPATH:.c=.o)
 
@@ -32,23 +32,23 @@ OBJ_F		=	$(FUNC:.c=.o)
 
 $(NAME):		$(OBJ_F) $(OBJ_M)
 				@$(CC) $(OBJ_F) $(OBJ_M) -o $(NAME)
-				@echo -e "$(GREEN)$(NAME) created!$(DEFAULT)"
+#				@echo -e "$(GREEN)$(NAME) created!$(DEFAULT)"
 
 all:			$(NAME)
 
-bonus:			$(OBJ_F) $(OBJ_B)
-				@$(CC) $(OBJ_F) $(OBJ_B) -o $(NAME)
-				@echo -e "$(GREEN)$(NAME) created!$(DEFAULT)"
+#bonus:			$(OBJ_F) $(OBJ_B)
+#				@$(CC) $(OBJ_F) $(OBJ_B) -o $(NAME)
+#				@echo -e "$(GREEN)$(NAME) created!$(DEFAULT)"
 
 clean:
 				@$(RM) $(OBJ_M)
 				@$(RM) $(OBJ_F)
 				@$(RM) $(OBJ_B)
-				@echo -e "$(YELLOW)object files deleted!$(DEFAULT)"
+#				@echo -e "$(YELLOW)object files deleted!$(DEFAULT)"
 
 fclean:			clean
 				@$(RM) $(NAME)
-				@echo -e "$(RED)all deleted!$(DEFAULT)"
+#				@echo -e "$(RED)all deleted!$(DEFAULT)"
 
 re:				fclean all
 

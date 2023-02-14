@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../includes/pipex.h"
 
 char	*path_to_bins(char **env)
 {
@@ -26,8 +26,8 @@ char	*path_to_bins(char **env)
             break ;
         i++;
     }
-    if (access(path, F_OK) < 0)
-        return (NULL);
+//    if (access(path, F_OK) < 0)
+    return (NULL);
 }
 
 void    close_pipe(t_pipex *pipex)
@@ -62,6 +62,5 @@ int	main(int argc, char *argv[], char *envp[])
     waitpid(pipex.pid1, NULL, 0);
     waitpid(pipex.pid2, NULL, 0);
     main_free(&pipex);
-    return (0);
     return (0);
 }
