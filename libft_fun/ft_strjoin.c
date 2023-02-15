@@ -6,11 +6,11 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 18:23:15 by ohanchak          #+#    #+#             */
-/*   Updated: 2022/10/24 17:14:02 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:25:02 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/pipex.h"
 
 static char	*mk_result1(char const *s1, char *result)
 {

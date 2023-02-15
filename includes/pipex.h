@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:39:19 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/01/27 17:09:26 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:30:01 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 /*to perror*/
 # include <stdio.h>
 # include "../gnl/get_next_line.h"
-# include "../libft_fun/libft.h"
+# include "../includes/pipex.h"
 typedef struct s_pipex
 {
     pid_t	pid1;
@@ -49,10 +49,11 @@ void	second_process(t_pipex pipex, char *argv[], char *envp[]);
 void	main_free(t_pipex *pipex);
 void	proc_free(t_pipex *pipex);
 
-size_t   ft_strlen(const char *s1);
+// size_t   ft_strlen(const char *s1);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *src);
 char	**ft_split(char const *s, char c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

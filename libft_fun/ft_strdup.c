@@ -6,11 +6,11 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 18:34:42 by ohanchak          #+#    #+#             */
-/*   Updated: 2022/10/26 17:09:22 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:24:57 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/pipex.h"
 
 char	*ft_strdup(const char *s1)
 {

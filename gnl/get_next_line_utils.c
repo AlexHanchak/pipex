@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 09:51:26 by ohanchak          #+#    #+#             */
-/*   Updated: 2022/12/27 15:45:10 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:30:41 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_free(char **p)
 	*p = NULL;
 }
 
-int	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 

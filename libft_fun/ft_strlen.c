@@ -6,11 +6,11 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:40:38 by ohanchak          #+#    #+#             */
-/*   Updated: 2022/11/01 15:22:48 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:25:06 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/pipex.h"
 
 size_t	ft_strlen(const char *str)
 {

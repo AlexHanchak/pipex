@@ -6,11 +6,11 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 16:37:45 by ohanchak          #+#    #+#             */
-/*   Updated: 2022/11/02 16:25:52 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:26:18 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/pipex.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

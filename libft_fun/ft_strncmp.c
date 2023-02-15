@@ -6,11 +6,11 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 22:20:57 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/01/27 17:11:18 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:25:14 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/pipex.h"
 
 int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {

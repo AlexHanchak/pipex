@@ -6,11 +6,11 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:01:06 by ohanchak          #+#    #+#             */
-/*   Updated: 2022/11/03 16:24:24 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:24:30 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/pipex.h"
 
 static int	countwords(char const *s, char c, int *i)
 {
