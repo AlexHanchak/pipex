@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:39:19 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/02/23 14:33:33 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:13:07 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,18 @@
 # include <stdio.h>
 # include "../gnl/get_next_line.h"
 # include "../includes/pipex.h"
+
 typedef struct s_pipex
 {
-    pid_t	pid1;
-    pid_t	pid2;
-    int		tube[2];
-    int		infile;
-    int		outfile;
-    char	*paths;
-    char	**cmd_paths;
-    char	**cmd_args;
-    char	*cmd;
+	pid_t	pid1;
+	pid_t	pid2;
+	int		tube[2];
+	int		infile;
+	int		outfile;
+	char	*paths;
+	char	**cmd_paths;
+	char	**cmd_args;
+	char	*cmd;
 }t_pipex;
 
 void	first_process(t_pipex pipex, char *argv[], char *envp[]);
