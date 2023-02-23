@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 14:45:49 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/02/14 15:25:27 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/02/23 14:49:44 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*path_to_bins(char **env)
     while (env[i] != NULL)
     {
         path = env[i];
-        printf("%s\n", path);
+        // printf("%s\n", path);
         if (ft_strncmp("PATH", path, 4) == 0)
             break ;
         i++;

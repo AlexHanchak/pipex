@@ -20,7 +20,7 @@ BPATH_DIR	=	bonus/
 BPATH		=	$(addprefix $(BPATH_DIR), $(BPATH_SRCS))
 OBJ_B		=	$(BPATH:.c=.o)
 
-FUNC_SRCS	=	ft_strncmp.c ft_strdup.c ft_split.c ft_strjoin.c
+FUNC_SRCS	=	ft_strncmp.c ft_strdup.c ft_split.c ft_strjoin.c ft_substr.c
 FUNC_DIR	=	libft_fun/
 FUNC 		=	$(addprefix $(FUNC_DIR), $(FUNC_SRCS))\
 				gnl/get_next_line_utils.c gnl/get_next_line.c
