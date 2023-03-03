@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lex <lex@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 14:45:49 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/02/23 16:15:32 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/03/03 12:59:10 by lex              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,9 @@
 
 char	*path_to_bins(char **env)
 {
-	char	*path;
-	int		i;
-
-	i = 0;
-	while (env[i] != NULL)
-	{
-		path = env[i];
-		printf("%s\n", path);
-		if (ft_strncmp("PATH", path, 4) == 0)
-			break ;
-		i++;
-	}
-	if (access(path, F_OK) < 0)
-		return (1);
-	return (NULL);
+    while (ft_strncmp("PATH", *env, 4))
+        env++;
+    return (*env + 5);
 }
 
 void	close_pipe(t_pipex *pipex)
@@ -46,7 +34,7 @@ int	main(int argc, char *argv[], char *envp[])
 	pipex.infile = open(argv[1], O_RDONLY);
 	if (pipex.infile < 0)
 		return (1);
-	pipex.outfile = open(argv[argc - 1], O_TRUNC | O_CREAT | O_RDWR, 0000644);
+	pipex.outfile = open(argv[argc - 1], O_TRUNC | O_CREAT | O_RDWR, 0000);
 	if (pipex.outfile < 0)
 		return (1);
 	if (pipe(pipex.tube) < 0)

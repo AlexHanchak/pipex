@@ -78,7 +78,7 @@ void	second_process(t_pipex pipex, char *argv[], char *envp[])
 {
 	dup2(pipex.tube[0], 0);
 	close(pipex.tube[1]);
-	dup2(pipex.infile, 1);
+	dup2(pipex.outfile, 1);
 	pipex.cmd_args = ft_split(argv[3], ' ');
 	pipex.cmd = get_cmd(pipex.cmd_paths, pipex.cmd_args[0]);
 	if (!pipex.cmd)
