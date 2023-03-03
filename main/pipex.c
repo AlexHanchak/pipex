@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 14:45:49 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/02/23 16:15:32 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/03/03 15:45:13 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*path_to_bins(char **env)
 		i++;
 	}
 	if (access(path, F_OK) < 0)
-		return (1);
+		return NULL;
 	return (NULL);
 }
 
