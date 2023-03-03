@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 16:15:52 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/03/03 16:47:04 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:02:42 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	second_process(t_pipex pipex, char *argv[], char *envp[])
 {
 	dup2(pipex.tube[0], 0);
 	close(pipex.tube[1]);
-	dup2(pipex.infile, 1);
+	dup2(pipex.outfile, 1);
 	pipex.cmd_args = ft_split(argv[3], ' ');
 	pipex.cmd = get_cmd(pipex.cmd_paths, pipex.cmd_args[0]);
 	if (!pipex.cmd)
