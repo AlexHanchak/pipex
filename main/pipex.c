@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 14:45:49 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/03/03 17:02:38 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/03/06 13:15:21 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*path_to_bins(char **env)
 {
-    while (ft_strncmp("PATH", *env, 4))
-        env++;
-    return (*env + 5);
+	while (ft_strncmp("PATH", *env, 4))
+		env++;
+	return (*env + 5);
 }
 
 void	close_pipe(t_pipex *pipex)
@@ -34,7 +34,7 @@ int	main(int argc, char *argv[], char *envp[])
 	pipex.infile = open(argv[1], O_RDONLY);
 	if (pipex.infile < 0)
 		return (1);
-	pipex.outfile = open(argv[argc - 1], O_TRUNC | O_CREAT | O_RDWR, 0000);
+	pipex.outfile = open(argv[argc - 1], O_TRUNC | O_CREAT | O_RDWR, 0000644);
 	if (pipex.outfile < 0)
 		return (1);
 	if (pipe(pipex.tube) < 0)

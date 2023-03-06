@@ -36,8 +36,8 @@ $(NAME):		$(OBJ_F) $(OBJ_M)
 
 all:			$(NAME)
 
-#bonus:			$(OBJ_F) $(OBJ_B)
-#				@$(CC) $(OBJ_F) $(OBJ_B) -o $(NAME)
+bonus:			$(OBJ_F) $(OBJ_B)
+				@$(CC) $(OBJ_F) $(OBJ_B) -o $(NAME)
 
 clean:
 				@$(RM) $(OBJ_M)
