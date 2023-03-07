@@ -21,7 +21,7 @@
 # include <stdlib.h>
 
 void	ft_free(char **p);
-size_t	ft_strlen(const char *s);
+int 	ft_strlen(const char *s);
 int		ft_strchr(char *s, int c, int flag);
 char	*ft_strnjoin(char *s1, char *s2, int n);
 char	*ft_strndup(char *str, int n);

@@ -18,7 +18,7 @@ void	ft_free(char **p)
 	*p = NULL;
 }
 
-size_t	ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
 	int	i;
 
