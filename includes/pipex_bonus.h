@@ -31,18 +31,20 @@
 # include "../gnl/get_next_line.h"
 # include "../includes/pipex.h"
 
-typedef struct s_pipex
+typedef struct s_pipb
 {
-	pid_t	pid1;
-	pid_t	pid2;
-	int		tube[2];
-	int		infile;
-	int		outfile;
-	char	*paths;
-	char	**cmd_paths;
-	char	**cmd_args;
+    int     infile;
+    int     outfile;
+	char    *envpath;
+	char	**cmdpaths;
 	char	*cmd;
-}t_pipex;
+	char	**cmd_args;
+	pid_t	pid;
+	int     cmd_numbs;
+	int     pipe_numbs;
+	char	*pipe;
+	int     index;
+}t_pipb;
 
 
 
