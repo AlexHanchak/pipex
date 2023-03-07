@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   pipex_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 16:39:19 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/03/06 15:22:16 by ohanchak         ###   ########.fr       */
+/*   Created: 2023/03/06 15:12:01 by ohanchak          #+#    #+#             */
+/*   Updated: 2023/03/06 15:28:47 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#ifdef PIPEX_BONUS_H
+# define PIPEX_BONUS_H
 
 /* to write, read, close, access, pipe, dup, dup2, execve, fork */
 # include <unistd.h>
@@ -44,17 +44,9 @@ typedef struct s_pipex
 	char	*cmd;
 }t_pipex;
 
-void	first_process(t_pipex pipex, char *argv[], char *envp[]);
-void	second_process(t_pipex pipex, char *argv[], char *envp[]);
 
-void	main_free(t_pipex *pipex);
-void	proc_free(t_pipex *pipex);
 
-// size_t   ft_strlen(const char *s1);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strdup(const char *src);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	**ft_split(char const *s, char c);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
+
+
 
 #endif
