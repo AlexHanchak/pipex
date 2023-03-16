@@ -12,14 +12,42 @@
 
 #include "../includes/pipex_bonus.h"
 
-void	close_ppipe(t_pipex *pipex)
+static void create_process(t_pipb *pipex)
 {
-	close(pipex->tube[0]);
+	int i;
+
+	i = 0;
+	while (i <= pipex->cmd_numbs)
+	{
+		if (pipe(pipex->pipe + 2 * i) < 0)
+			main_free(pipex);
+		i++;
+	}
+}
+
+void	close_ppipe(t_pipb *pipex)
+{
+	int i;
+
+	i = 0;
+	while (pipb->pipe_numbs)
+	{
+		close(pipb->pipe[i]);
+		i++;
+	}
+}
+
+void infile(char **argv, t_pipb *pipex)
+{
+	
 }
 
 int main(int argc, char *argv[], char *envp[])
 {
-	t_pipex pipex;
-	
+	t_pipb pipex;
+
+	if (argc < args_in(argv[1], &pipex))
+//		return ("errror")????????????
+
 	return (0);
 }
