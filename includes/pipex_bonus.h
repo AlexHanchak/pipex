@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifdef PIPEX_BONUS_H
+#ifndef PIPEX_BONUS_H
 # define PIPEX_BONUS_H
 
 /* to write, read, close, access, pipe, dup, dup2, execve, fork */
@@ -29,7 +29,6 @@
 /*to perror*/
 # include <stdio.h>
 # include "../gnl/get_next_line.h"
-# include "../includes/pipex.h"
 
 typedef struct s_pipb
 {
@@ -39,12 +38,17 @@ typedef struct s_pipb
 	char	**cmdpaths;
 	char	*cmd;
 	char	**cmd_args;
+	int		here_doc;
 	pid_t	pid;
 	int     cmd_numbs;
 	int     pipe_numbs;
 	char	*pipe;
 	int     index;
 }t_pipb;
+
+void infile(char **argv, t_pipb *pipex);
+
+void outfile(char *argv, t_pipb *pipex);
 
 
 
