@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 16:15:52 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/03/03 17:10:54 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/03/16 14:34:54 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	first_process(t_pipex pipex, char *argv[], char *envp[])
 	if (!pipex.cmd)
 	{
 		proc_free(&pipex);
+		perror("Command not found!");
 		exit(1);
 	}
 	execve(pipex.cmd, pipex.cmd_args, envp);
@@ -84,6 +85,7 @@ void	second_process(t_pipex pipex, char *argv[], char *envp[])
 	if (!pipex.cmd)
 	{
 		proc_free(&pipex);
+		perror("Command not found!");
 		exit(1);
 	}
 	execve(pipex.cmd, pipex.cmd_args, envp);

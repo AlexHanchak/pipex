@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:11:25 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/03/16 11:47:08 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/03/16 12:38:18 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,31 @@ static void create_process(t_pipb *pipex)
 	}
 }
 
+void main_free(t_pipb *pipex)
+{
+	int i;
+
+	i = 0;
+
+	close(pipex->infile);
+	close(pipex->outfile);
+	while (pipex->cmd_args[i])
+	{
+		free(pipex->cmd[i]);
+		i++;
+	}
+	free(pipex->cmd);
+	
+}
+
 void	close_ppipe(t_pipb *pipex)
 {
 	int i;
 
 	i = 0;
-	while (pipb->pipe_numbs)
+	while (pipex->pipe_numbs)
 	{
-		close(pipb->pipe[i]);
+		close(pipex->pipe[i]);
 		i++;
 	}
 }
@@ -45,7 +62,7 @@ void infile(char **argv, t_pipb *pipex)
 	{
 		pipex->infile = open(argv[1], O_RDONLY);
 		if (pipex->infile < 0)
-			msg_error(ERR_INFILE);
+			return 1;
 	}
 
 }
@@ -57,7 +74,7 @@ void outfile(char *argv, t_pipb *pipex)
 	else
 		pipex->outfile = open(argv, O_CREAT | O_RDWR | O_TRUNC, 0000644);
 	if (pipex->outfile < 0)
-
+		return 1;
 }
 
 int main(int argc, char *argv[], char *envp[])
@@ -65,6 +82,7 @@ int main(int argc, char *argv[], char *envp[])
 	t_pipb pipex;
 
 	if (argc < args_in(argv[1], &pipex))
+		return 1;
 //		return ("errror")????????????
 
 

@@ -14,11 +14,11 @@ MPATH_DIR	=	main/
 MPATH		=	$(addprefix $(MPATH_DIR), $(MPATH_SRCS))
 OBJ_M		=	$(MPATH:.c=.o)
 
-BPATH_SRCS	=	pipex_bonus.c error_bonus.c here_doc_bonus.c\
+# BPATH_SRCS	=	pipex_bonus.c error_bonus.c here_doc_bonus.c\
 				files_bonus.c free_bonus.c child_bonus.c
-BPATH_DIR	=	bonus/
-BPATH		=	$(addprefix $(BPATH_DIR), $(BPATH_SRCS))
-OBJ_B		=	$(BPATH:.c=.o)
+# BPATH_DIR	=	bonus/
+# BPATH		=	$(addprefix $(BPATH_DIR), $(BPATH_SRCS))
+# OBJ_B		=	$(BPATH:.c=.o)
 
 FUNC_SRCS	=	ft_strncmp.c ft_strdup.c ft_split.c ft_strjoin.c ft_substr.c
 FUNC_DIR	=	libft_fun/
@@ -36,8 +36,8 @@ $(NAME):		$(OBJ_F) $(OBJ_M)
 
 all:			$(NAME)
 
-bonus:			$(OBJ_F) $(OBJ_B)
-				@$(CC) $(OBJ_F) $(OBJ_B) -o $(NAME)
+# bonus:			$(OBJ_F) $(OBJ_B)
+# 				@$(CC) $(OBJ_F) $(OBJ_B) -o $(NAME)
 
 clean:
 				@$(RM) $(OBJ_M)

@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:39:19 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/03/06 15:22:16 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/03/16 14:27:47 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <sys/types.h>
 # include <sys/uio.h>
+
+# include <stdio.h>
 
 /* malloc, free, exit */
 # include <stdlib.h>
