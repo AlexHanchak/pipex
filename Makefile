@@ -37,13 +37,8 @@ $(NAME):		$(OBJ_F) $(OBJ_M)
 
 all:			$(NAME)
 
-<<<<<<< HEAD
 #bonus:			$(OBJ_F) $(OBJ_B)
 #				@$(CC) $(OBJ_F) $(OBJ_B) -o $(NAME)
-=======
-# bonus:			$(OBJ_F) $(OBJ_B)
-# 				@$(CC) $(OBJ_F) $(OBJ_B) -o $(NAME)
->>>>>>> cddd3ed1cce23f9f43bd53ae92db8df81ace81c4
 
 clean:
 				@$(RM) $(OBJ_M)
