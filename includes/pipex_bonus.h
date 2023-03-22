@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:12:01 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/03/06 15:28:47 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/03/16 12:11:35 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,15 @@ void infile(char **argv, t_pipb *pipex);
 
 void outfile(char *argv, t_pipb *pipex);
 
+void main_free(t_pipb *pipex);
+
+void	close_ppipe(t_pipb *pipex);
 
 
-
-
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strdup(const char *src);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	**ft_split(char const *s, char c);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

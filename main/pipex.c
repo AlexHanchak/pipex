@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 14:45:49 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/03/06 13:15:21 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/03/16 14:34:30 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char *argv[], char *envp[])
 	if (pipex.outfile < 0)
 		perror("Invalid outfile");
 	if (pipe(pipex.tube) < 0)
-		return (1);
+		perror("nothing in the tube");
 	pipex.paths = path_to_bins(envp);
 	pipex.cmd_paths = ft_split(pipex.paths, ':');
 	pipex.pid1 = fork();
