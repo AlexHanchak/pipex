@@ -30,13 +30,13 @@ int	main(int argc, char *argv[], char *envp[])
 	t_pipex	pipex;
 
 	if (argc != 5)
-		return (1);
+		perror("Invalid number of arguments.\n");
 	pipex.infile = open(argv[1], O_RDONLY);
 	if (pipex.infile < 0)
-		return (1);
+		perror("Invalid infile");
 	pipex.outfile = open(argv[argc - 1], O_TRUNC | O_CREAT | O_RDWR, 0000644);
 	if (pipex.outfile < 0)
-		return (1);
+		perror("Invalid outfile");
 	if (pipe(pipex.tube) < 0)
 		return (1);
 	pipex.paths = path_to_bins(envp);
