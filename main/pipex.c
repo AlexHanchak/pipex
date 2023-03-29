@@ -32,14 +32,16 @@ int	main(int argc, char *argv[], char *envp[])
 
 	if (argc != 5)
 		{
-		// perror("Invalid number of arguments.\n");
 		write(2, "Invalid number of arguments.\n", 29);
 		return(1);
 		}
 	pipex.infile = open(argv[1], O_RDONLY);
 	pipex.outfile = open(argv[argc - 1], O_TRUNC | O_CREAT | O_RDWR, 0000644);
 	if (pipe(pipex.tube) < 0)
-		perror("nothing in the tube");
+	{
+		write(2, "nothing in tube.\n", 18);
+		return (127);
+	}
 	pipex.paths = path_to_bins(envp);
 	pipex.cmd_paths = ft_split(pipex.paths, ':');
 	pipex.pid1 = fork();
@@ -54,14 +56,6 @@ int	main(int argc, char *argv[], char *envp[])
 	waitpid(pipex.pid1, NULL, 0);
 	main_free(&pipex);
 	if (WIFEXITED(status))
-	{
-		while (argv)
-		{
-		status = 0;
-		}
 		return(WEXITSTATUS(status));
-	}
-	
-	
 	return (0);
 }
