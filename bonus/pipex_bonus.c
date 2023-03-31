@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:11:25 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/03/16 12:38:18 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/03/30 11:52:55 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void main_free(t_pipb *pipex)
 		i++;
 	}
 	free(pipex->cmd);
-	
 }
 
 void	close_ppipe(t_pipb *pipex)

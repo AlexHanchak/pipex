@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 14:45:49 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/03/22 13:48:51 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/03/31 18:15:46 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,43 +25,38 @@ void	close_pipe(t_pipex *pipex)
 	close(pipex->tube[1]);
 }
 
+void	func(t_pipex *pipex, char **argv, char **envp)
+{
+	pipex->pid1 = fork();
+	if (pipex->pid1 == 0)
+		first_process(*pipex, argv, envp);
+	pipex->pid2 = fork();
+	if (pipex->pid2 == 0)
+		second_process(*pipex, argv, envp);
+}
+
 int	main(int argc, char *argv[], char *envp[])
 {
 	t_pipex	pipex;
-	int status;
+	int		status;
 
 	if (argc != 5)
-		{
-		// perror("Invalid number of arguments.\n");
+	{
 		write(2, "Invalid number of arguments.\n", 29);
-		return(1);
-		}
+		return (1);
+	}
 	pipex.infile = open(argv[1], O_RDONLY);
 	pipex.outfile = open(argv[argc - 1], O_TRUNC | O_CREAT | O_RDWR, 0000644);
 	if (pipe(pipex.tube) < 0)
 		perror("nothing in the tube");
 	pipex.paths = path_to_bins(envp);
 	pipex.cmd_paths = ft_split(pipex.paths, ':');
-	pipex.pid1 = fork();
-	if (pipex.pid1 == 0)
-			first_process(pipex, argv, envp);
-	pipex.pid2 = fork();
-	if (pipex.pid2 == 0)
-		second_process(pipex, argv, envp);
+	func(&pipex, argv, envp);
 	close_pipe(&pipex);
-
 	waitpid(pipex.pid2, &status, 0);
 	waitpid(pipex.pid1, NULL, 0);
 	main_free(&pipex);
 	if (WIFEXITED(status))
-	{
-		while (argv)
-		{
-		status = 0;
-		}
-		return(WEXITSTATUS(status));
-	}
-	
-	
+		return (WEXITSTATUS(status));
 	return (0);
 }

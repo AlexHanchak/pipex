@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 16:15:52 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/03/22 13:37:41 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/03/31 18:14:02 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,7 @@ void	main_free(t_pipex *pipex)
 
 void	first_process(t_pipex pipex, char *argv[], char *envp[])
 {
-	
-	if (pipex.infile < 0) 
+	if (pipex.infile < 0)
 	{
 		if (access(argv[1], F_OK) != -1)
 			write(2, "permission denied\n", 18);
@@ -76,7 +75,6 @@ void	first_process(t_pipex pipex, char *argv[], char *envp[])
 	close(pipex.infile);
 	pipex.cmd_args = ft_split(argv[2], ' ');
 	pipex.cmd = get_cmd(pipex.cmd_paths, pipex.cmd_args[0]);
-	
 	if (!pipex.cmd)
 	{
 		proc_free(&pipex);
@@ -92,8 +90,7 @@ void	first_process(t_pipex pipex, char *argv[], char *envp[])
 
 void	second_process(t_pipex pipex, char *argv[], char *envp[])
 {
-	
-	if (pipex.outfile < 0) 
+	if (pipex.outfile < 0)
 	{
 		write(2, "permission denied\n", 18);
 		exit(1);

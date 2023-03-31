@@ -6,7 +6,7 @@
 /*   By: ohanchak <ohanchak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:12:01 by ohanchak          #+#    #+#             */
-/*   Updated: 2023/03/16 12:11:35 by ohanchak         ###   ########.fr       */
+/*   Updated: 2023/03/28 18:15:02 by ohanchak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,28 +32,27 @@
 
 typedef struct s_pipb
 {
-    int     infile;
-    int     outfile;
-	char    *envpath;
+	int		infile;
+	int		outfile;
+	char	*envpath;
 	char	**cmdpaths;
 	char	*cmd;
 	char	**cmd_args;
 	int		here_doc;
 	pid_t	pid;
-	int     cmd_numbs;
-	int     pipe_numbs;
+	int		cmd_numbs;
+	int		pipe_numbs;
 	char	*pipe;
-	int     index;
+	int		index;
 }t_pipb;
 
-void infile(char **argv, t_pipb *pipex);
+void	infile(char **argv, t_pipb *pipex);
 
-void outfile(char *argv, t_pipb *pipex);
+void	outfile(char *argv, t_pipb *pipex);
 
-void main_free(t_pipb *pipex);
+void	main_free(t_pipb *pipex);
 
 void	close_ppipe(t_pipb *pipex);
-
 
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *src);
