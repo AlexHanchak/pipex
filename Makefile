@@ -14,16 +14,9 @@ MPATH_DIR	=	main/
 MPATH		=	$(addprefix $(MPATH_DIR), $(MPATH_SRCS))
 OBJ_M		=	$(MPATH:.c=.o)
 
-# BPATH_SRCS	=	pipex_bonus.c error_bonus.c here_doc_bonus.c\
-				files_bonus.c free_bonus.c child_bonus.c
-# BPATH_DIR	=	bonus/
-# BPATH		=	$(addprefix $(BPATH_DIR), $(BPATH_SRCS))
-# OBJ_B		=	$(BPATH:.c=.o)
-
-FUNC_SRCS	=	ft_strncmp.c ft_strdup.c ft_split.c ft_strjoin.c ft_substr.c
+FUNC_SRCS	=	ft_strncmp.c ft_strdup.c ft_split.c ft_strjoin.c ft_substr.c ft_strlen.c
 FUNC_DIR	=	libft_fun/
-FUNC 		=	$(addprefix $(FUNC_DIR), $(FUNC_SRCS))\
-				gnl/get_next_line_utils.c gnl/get_next_line.c
+FUNC 		=	$(addprefix $(FUNC_DIR), $(FUNC_SRCS))
 OBJ_F		=	$(FUNC:.c=.o)
 
 #COMMANDS
@@ -36,19 +29,14 @@ $(NAME):		$(OBJ_F) $(OBJ_M)
 
 all:			$(NAME)
 
-#bonus:			$(OBJ_F) $(OBJ_B)
-#				@$(CC) $(OBJ_F) $(OBJ_B) -o $(NAME)
-
 
 clean:
 				@$(RM) $(OBJ_M)
 				@$(RM) $(OBJ_F)
-				@$(RM) $(OBJ_B)
-
 
 fclean:			clean
 				@$(RM) $(NAME)
 
 re:				fclean all
 
-.PHONY:		all clean fclean bonus re
+.PHONY:		all clean fclean re

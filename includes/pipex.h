@@ -30,7 +30,7 @@
 # include <string.h>
 /*to perror*/
 # include <stdio.h>
-# include "../gnl/get_next_line.h"
+
 # include "../includes/pipex.h"
 
 typedef struct s_pipex
@@ -52,7 +52,7 @@ void	second_process(t_pipex pipex, char *argv[], char *envp[]);
 void	main_free(t_pipex *pipex);
 void	proc_free(t_pipex *pipex);
 
-// size_t   ft_strlen(const char *s1);
+size_t	ft_strlen(const char *str);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *src);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
